@@ -8,7 +8,7 @@ import Link from "next/link"
 
 const CHANNEL_NAME = "ParagonFGC"
 
-export function ChannelPage() {
+export function ChannelEmbed() {
   return (
     <div className="flex w-full flex-col items-center">
       <div className="flex w-full flex-col xl:flex-row">
@@ -24,12 +24,11 @@ export function ChannelPage() {
                   target="_blank"
                   rel="noreferrer nofollow external"
                 >
-                    Watch on Twitch
+                  Watch on Twitch
                   <Icons.externalLink className="ml-1 w-3" />
                 </Link>
               </Button>
             </div>
-
           </div>
         </div>
         <div className="h-[calc(100vh_-_64px)] xl:h-auto w-full xl:w-[340px]">

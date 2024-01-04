@@ -3,7 +3,8 @@ import { Icons } from "../components/icons"
 export const siteConfig = {
   title: "ParagonFGC",
   shortTitle: "Paragon",
-  description: "Paragon is a community of fighting game players and content creators. We are dedicated to supporting the fighting game community by providing a platform for players to compete, and content creators to share their work.",
+  description:
+    "Paragon is a community of fighting game players and content creators. We are dedicated to supporting the fighting game community by providing a platform for players to compete, and content creators to share their work.",
   links: {
     website: "https://paragonfgc.com",
     twitter: "https://twitter.com/ParagonFGC",

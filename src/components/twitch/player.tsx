@@ -7,11 +7,6 @@ const parent = isProd ? ["cold-shouldah.paragonfgc.com"] : ["localhost"]
 
 export function TwitchPlayer({ channelName }: { channelName: string }) {
   return (
-    <TwitchPlayerEmbed
-      channel={channelName}
-      width="100%"
-      height="100%"
-      parent={parent}
-    />
+    <TwitchPlayerEmbed channel={channelName} width="100%" height="100%" parent={parent} />
   )
 }

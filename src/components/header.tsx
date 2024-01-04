@@ -1,19 +1,14 @@
-import Image from "next/image";
-import { Button } from "./ui/button";
-import Link from "next/link";
-import { Icons } from "./icons";
+import Image from "next/image"
+import { Button } from "./ui/button"
+import Link from "next/link"
+import { Icons } from "./icons"
 
 export function Header() {
   return (
     <header className="w-full body-font text-white bg-background border-b">
       <div className="container flex flex-row items-start justify-between px-2 py-4 mx-auto">
         <div>
-          <Image
-            src="/paragon_logo.svg"
-            alt="Paragon logomark"
-            width={32}
-            height={32}
-          />
+          <Image src="/paragon_logo.svg" alt="Paragon logomark" width={32} height={32} />
         </div>
 
         <div className="space-x-2">
