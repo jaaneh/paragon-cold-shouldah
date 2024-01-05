@@ -4,7 +4,7 @@ export const APP_URL = isProd
   ? "https://cold-shouldah.paragonfgc.com"
   : "http://localhost:3000"
 
-export const CHANNEL_NAME = "HasanAbi"
+export const CHANNEL_NAME = "ParagonFGC"
 
 export const initialData = {
   name: "",
