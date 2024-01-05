@@ -37,8 +37,7 @@ export function ChannelEmbed() {
     queryKey: ["stream-data"],
     queryFn: getStreamData,
     initialData,
-    refetchInterval: 10 * 1000
-    // refetchInterval: 2 * 60 * 1000 // 2 minutes
+    refetchInterval: 2 * 60 * 1000 // 2 minutes
   })
 
   return (
