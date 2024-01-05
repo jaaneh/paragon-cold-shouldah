@@ -10,7 +10,6 @@ export function Header() {
         <div>
           <Image src="/paragon_logo.svg" alt="Paragon logomark" width={32} height={32} />
         </div>
-
         <div className="space-x-2">
           <Button variant="outline" asChild>
             <Link href="http://parfgc.to/CSC" target="_blank">

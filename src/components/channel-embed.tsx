@@ -13,23 +13,11 @@ import { formatViewerCount } from "@/lib/utils"
 import { Avatar, AvatarImage } from "./ui/avatar"
 import { AvatarFallback } from "@radix-ui/react-avatar"
 
-import { APP_URL } from "@/config/constants"
+import { APP_URL, initialData } from "@/config/constants"
 
 const getStreamData = async () => {
   const data = await fetch(`${APP_URL}/api/twitch`).then(res => res.json())
   return data
-}
-
-const initialData = {
-  data: {
-    avatar: "",
-    name: "",
-    streamTitle: "",
-    gameName: "",
-    isLive: false,
-    viewerCount: 0,
-    partnered: false
-  }
 }
 
 export function ChannelEmbed() {
