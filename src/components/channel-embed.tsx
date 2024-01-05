@@ -13,9 +13,11 @@ import { formatViewerCount } from "@/lib/utils"
 import { Avatar, AvatarImage } from "./ui/avatar"
 import { AvatarFallback } from "@radix-ui/react-avatar"
 
+import { APP_URL } from "@/config/constants"
+
 const getStreamData = async () => {
-  const res = await fetch("http://localhost:3000/api/twitch")
-  return res.json()
+  const data = await fetch(`${APP_URL}/api/twitch`).then(res => res.json())
+  return data
 }
 
 const initialData = {
@@ -35,7 +37,8 @@ export function ChannelEmbed() {
     queryKey: ["stream-data"],
     queryFn: getStreamData,
     initialData,
-    refetchInterval: 2 * 60 * 1000 // 2 minutes
+    refetchInterval: 10 * 1000
+    // refetchInterval: 2 * 60 * 1000 // 2 minutes
   })
 
   return (
@@ -62,7 +65,10 @@ export function ChannelEmbed() {
                     </span>
                   )}
                 </h3>
-                <p className="line-clamp-1 text-sm text-gray-400">
+                <p
+                  className="line-clamp-1 text-sm text-gray-400"
+                  title={channel?.data?.streamTitle}
+                >
                   {channel?.data?.streamTitle}
                 </p>
                 <p className="w-fit text-xs text-blue-300">{channel?.data?.gameName}</p>
