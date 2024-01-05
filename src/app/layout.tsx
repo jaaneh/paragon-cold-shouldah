@@ -9,6 +9,8 @@ import { Header } from "@/components/header"
 import { cn } from "@/lib/utils"
 import { Footer } from "@/components/footer"
 
+import Providers from "./providers"
+
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" })
 const neoGram = localFont({
   src: [
@@ -68,11 +70,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           neoGram.variable
         )}
       >
-        <Header />
-        <main className="flex flex-col min-h-screen flex-1 w-full mx-auto container max-w-[1600px] px-0">
-          {children}
-        </main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main className="flex flex-col min-h-screen flex-1 w-full mx-auto container max-w-[1600px] px-0">
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )

@@ -2,7 +2,7 @@
 
 export function CardsGrid() {
   return (
-    <section className="grid grid-cols-4 gap-6 mt-6 container">
+    <section className="grid grid-cols-4 gap-6 container">
       {Array.from({ length: 6 }).map((_, i) => {
         return <Card key={i} />
       })}
