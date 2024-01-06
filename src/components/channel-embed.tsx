@@ -8,7 +8,7 @@ import { TwitchChat } from "@/components/twitch/chat"
 import { TwitchPlayer } from "@/components/twitch/player"
 import { Button } from "@/components/ui/button"
 
-import { CHANNEL_NAME } from "@/config/constants"
+import { CHANNEL_NAME, TwitchData } from "@/config/constants"
 import { formatViewerCount } from "@/lib/utils"
 import { Avatar, AvatarImage } from "./ui/avatar"
 import { AvatarFallback } from "@radix-ui/react-avatar"
@@ -16,7 +16,7 @@ import { AvatarFallback } from "@radix-ui/react-avatar"
 import { APP_URL, initialData } from "@/config/constants"
 
 const getStreamData = async () => {
-  const data = await fetch(`${APP_URL}/api/twitch`).then(res => res.json())
+  const data: TwitchData = await fetch(`${APP_URL}/api/twitch`).then(res => res.json())
   return data
 }
 
