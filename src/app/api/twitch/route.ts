@@ -15,18 +15,14 @@ export async function GET(request: NextRequest) {
   const cachedData = cache.get(cacheKey)
 
   if (cachedData) {
-    return new Response(JSON.stringify({ ...cachedData }))
+    return new Response(JSON.stringify(cachedData))
   }
 
   const { userInfo, streamInfo } = await getUserAndStreamData(CHANNEL_NAME)
   const channelIsLive = streamInfo?.[0]?.type === "live" ?? false
 
   if (!channelIsLive) {
-    return new Response(
-      JSON.stringify({
-        message: "Channel is offline."
-      })
-    )
+    return new Response(JSON.stringify({ message: "Channel is offline." }))
   }
 
   const twitchData = {
@@ -42,5 +38,5 @@ export async function GET(request: NextRequest) {
 
   cache.set(cacheKey, twitchData, 120)
 
-  return new Response(JSON.stringify({ ...twitchData }))
+  return new Response(JSON.stringify(twitchData))
 }

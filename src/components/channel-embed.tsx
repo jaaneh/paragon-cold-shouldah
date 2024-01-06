@@ -37,16 +37,16 @@ export function ChannelEmbed() {
           </div>
           <div className="my-4 flex w-full items-start justify-between px-2">
             <div className="flex">
-              {channel?.data?.isLive && (
+              {channel?.isLive && (
                 <Avatar className="h-16 w-16 ring-2 ring-sky-300 ring-offset-2 ring-offset-background transition-all duration-100 hover:ring-[3px]">
-                  <AvatarImage src={channel?.data?.avatar} alt={channel?.data?.name} />
-                  <AvatarFallback>{channel?.data?.name.charAt(0)}</AvatarFallback>
+                  <AvatarImage src={channel?.avatar} alt={channel?.name} />
+                  <AvatarFallback>{channel?.name.charAt(0)}</AvatarFallback>
                 </Avatar>
               )}
               <div className="ml-4 flex flex-col justify-center space-y-1.5">
                 <h3 className="flex items-center text-xl font-semibold leading-none">
-                  {channel?.data?.name}
-                  {channel?.data?.partnered && (
+                  {channel?.name}
+                  {channel?.partnered && (
                     <span className="ml-1.5 text-white">
                       <Icons.badgeCheck className="h-4 w-4 fill-blue-600" />
                     </span>
@@ -54,11 +54,11 @@ export function ChannelEmbed() {
                 </h3>
                 <p
                   className="line-clamp-1 text-sm text-gray-400"
-                  title={channel?.data?.streamTitle}
+                  title={channel?.streamTitle}
                 >
-                  {channel?.data?.streamTitle}
+                  {channel?.streamTitle}
                 </p>
-                <p className="w-fit text-xs text-blue-300">{channel?.data?.gameName}</p>
+                <p className="w-fit text-xs text-blue-300">{channel?.gameName}</p>
               </div>
             </div>
             <div className="flex flex-col space-y-1.5">
@@ -75,12 +75,10 @@ export function ChannelEmbed() {
                 </Button>
               </div>
               <div className="flex items-center justify-end text-sm text-red-400">
-                {channel?.data?.isLive && (
+                {channel?.isLive && (
                   <>
                     <Icons.user className="h-4 w-4" />
-                    <p className="ml-1">
-                      {formatViewerCount(channel?.data?.viewerCount)}
-                    </p>
+                    <p className="ml-1">{formatViewerCount(channel?.viewerCount)}</p>
                   </>
                 )}
               </div>
